@@ -48,11 +48,21 @@ h2{
 	letter-spacing: .5px;color:#607D8B;font-style: italic;
 }
 
-section{
-	margin-top: 70px !important;
-}
 
 .btn{
 	height: 30px !important;width: 150px !important;
 	border: none !important;border-radius: none !important;
+}
+
+.profile{
+	padding:20px;background-color: white;
+	height: auto;
+	box-sizing: border-box;
+}
+.navbar{
+	margin: 0!important;
+}
+.alpha{
+	    background-color: #3c3d3e;
+    padding: 20px 30px 20px 30px;
 }

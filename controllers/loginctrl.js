@@ -17,14 +17,13 @@ logincheck : function(email,pass){
     },
         data: {email: email, password: pass}
 }).then(function (response){
-         if (typeof response.data === 'object') {
+     
+                            
                             return response.data;
-                        } else {
-                            // invalid response
-                            return $q.reject(response.data);
-                        }
+                        
 
     },function (response){
+          console.log('level3');
             return $q.reject(response.data);
     });
 },
@@ -42,14 +41,13 @@ signup:function(firstname,lastname,email,pass)
     },
     data : {fname:firstname,lname:lastname,signupemail:email,signuppassword:pass}
     }).then( function(response){
-          if (typeof response.data === 'object') {
+         
+                          
                             return response.data;
-                        } else {
-                            // invalid response
-                            return $q.reject(response.data);
-                        }
+                       
 
     },function (response){
+         //console.log('level3');
             return $q.reject(response.data);
     });
 
@@ -57,13 +55,22 @@ signup:function(firstname,lastname,email,pass)
 };
 
 }).
-controller('loginctrl',["$scope","loginspcl",function($scope,loginspcl){
+controller('loginctrl',["$scope","$location","$timeout","loginspcl",function($scope,$location,$timeout,loginspcl){
 $scope.logincheck=function(){
 loginspcl.logincheck($scope.email,$scope.pass).then(function (data){
-        //console.log(response.data);
-        $scope.result= data;},function (error){
-            $scope.result= error;
-    });
+      //  console.log(response.data);
+        $scope.result= data;
+       //  console.log('level4');
+        $timeout(
+          function(){$location.url("home");},500);
+                 
+        },
+        function (error){
+          //  console.log(error);
+           $scope.result= error;
+          
+    
+});
 
 }; 
 
@@ -71,7 +78,7 @@ loginspcl.logincheck($scope.email,$scope.pass).then(function (data){
 
 }]).
 
-controller('signupctrl',["$scope","$location","loginspcl",function($scope,$location,loginspcl){
+controller('signupctrl',["$scope","$location","$timeout","loginspcl",function($scope,$location,$timeout,loginspcl){
 $scope.processstatus=true;
 $scope.signup=function(){
     loginspcl.signup($scope.fname,$scope.lname,$scope.signupemail,$scope.signuppassword)
@@ -81,9 +88,9 @@ $scope.signup=function(){
             {
                 $scope.processstatus=false;
                 $scope.signupstatus=data;
-                setTimeout(function(){
-                    $location="#!"
-                },500);
+                 $timeout(  function(){
+           $location.url("");},500);
+               
             },
             function (data)
             { 

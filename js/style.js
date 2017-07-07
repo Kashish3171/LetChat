@@ -1,4 +1,4 @@
-var app=angular.module('letchat',["ngRoute","login"])
+var app=angular.module('letchat',["ngRoute","login","profile"])
 
 .config(function($routeProvider)
     {
@@ -15,6 +15,11 @@ var app=angular.module('letchat',["ngRoute","login"])
 
         	templateUrl : "views/signup.html",
         	controller:"signupctrl"
+        })
+
+        .when('/home',{
+            templateUrl:"views/profile.html",
+            controller:"profilectrl"
         })
     }
 
