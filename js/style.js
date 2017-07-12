@@ -1,4 +1,4 @@
-var app=angular.module('letchat',["ngRoute","login","profile"])
+angular.module('letchat',["ngRoute","login","profile"])
 
 .config(function($routeProvider)
     {
@@ -21,7 +21,6 @@ var app=angular.module('letchat',["ngRoute","login","profile"])
             templateUrl:"views/profile.html",
             controller:"profilectrl"
         })
-    }
+    })
+;
 
-
-    );

@@ -1,7 +1,7 @@
-<?php
+<?php 
 require_once('../includes/database.php');
 session_start();
-
+date_default_timezone_set('Asia/Kolkata');
 if(isset($_POST['message']) && !empty($_POST['message']))
 {  //$return="we are in";
 	$id=$_SESSION['id'];

@@ -1,4 +1,4 @@
-angular.module("profile",[]).
+	angular.module("profile",[]).
 service("profileservice",function($http,$q){
 	//console.log('in service level1');
 	//var profileservice;
@@ -51,11 +51,11 @@ service("profileservice",function($http,$q){
 
 						}).then(
 									function (response)
-									{ 		console.log(response.data);
+									{ 	//	console.log(response.data);
 										return response.data;
 									},
 									function (response)
-									{	console.log(response.data);
+									{	//console.log(response.data);
 										return $q.reject(response.data);
 									}
 								)
@@ -64,37 +64,30 @@ service("profileservice",function($http,$q){
 };
 //return this;
 }).
-controller("profilectrl",["$scope","$location","profileservice",function($scope,$location,profileservice)
+controller("profilectrl",["$scope","$location","$route","$interval","$timeout","profileservice",function($scope,$location,$route,$interval,$timeout,profileservice)
 {		
 	$scope.message=function()
 		{	//console.log('in ctrl level1');
 		var mess=$scope.mess;
 		profileservice.insertmessage(mess).then(
-			function (data)
-			{ $scope.mess="";
-						/*profileservice.displaymessage()
-						.then(
-								function (data)
-								{
+					function (data)
+					{ $scope.mess="";
+						alpha();
 
-								},
-								function (data)
-								{
-
-								}
-							)
-							*/
-						},
+					},
 						function (error)
 					{ //console.log(error);
 
 						//console.log('in ctrl failure level2');
-						$scope.serverstatus="Sorry something went wrong.Please try again.";
+						$timeout(function(){
+						$scope.serverstatus="Sorry something went wrong.Please try again.";},500);
 					}
 					)
 
 	};	
-	profileservice.allmessages()
+ var alpha=function(){
+
+ 	profileservice.allmessages()
 	.then(
 			function (data)
 			{ 	
@@ -106,13 +99,17 @@ controller("profilectrl",["$scope","$location","profileservice",function($scope,
 			},
 			function (data)
 			{
-				console.log('fucnelde'); 		
+				$route.reload();	
 			}
 
 
 		);
+}
+alpha();
 
-	
+$interval(function(){alpha();},500);
+//$scope.$watch(function(){$scope.allmessages,function(newval,oldval){alpha();},true);
+
 }]).filter('reverse', function() {
   return function(items) {
   	if (!angular.isArray(items)) {return false;}

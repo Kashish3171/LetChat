@@ -1,44 +1,47 @@
+
 <div class="alpha">
-<div class="row">
-	<div class=" col-xs-12 profile">
-		<div ng-repeat="onemessage in allmessages | reverse">
-			
-			<div class="row" ng-if="$even">
-				<div class="col-xs-6">
-					<div class="row">
-						<div class="col-xs-1">
-							<img src="images/bg.jpg" class="media-object" style="width: 40px;">
-						</div>
-						<div class="col-xs-7">
-							<h4 class="media-heading">{{onemessage[2]}}</h4>
-							<p>{{onemessage[0]}}</p>
-						</div>
-					
-				
+	<div class="row">
+		<div class=" col-xs-12 profile">
+			<div ng-repeat="onemessage in allmessages">
 
+				<div class="row" ng-if="$even">
+					<div class="col-xs-6">
+						<div class="row">
+							<div class="col-xs-1">
+								<img src="images/bg.jpg" class="media-object" style="width: 40px;">
+							</div>
+							<div class="col-xs-7">
+								<h4 class="media-heading">{{onemessage[2]}}</h4>
+								<p>Time: {{onemessage[1]}} </p>
+								<p>{{onemessage[0]}}</p>
+							</div>
+
+
+
+						</div>
+						<hr>
+					</div>
+				</div>
+
+				<div class="row" ng-if="$odd">
+					<div class="col-xs-offset-6 col-xs-6">
+						<div class="row">
+							<div class="col-xs-1">
+								<img src="images/bg.jpg" class="media-object" style="width: 40px;">
+							</div>
+							<div class="col-xs-7">
+								<h4 class="media-heading">{{onemessage[2]}}</h4>
+								<p>Time: {{onemessage[1]}} </p>
+								<p>{{onemessage[0]}}</p>
+							</div>
+
+
+
+						</div>
+						<hr>
+					</div>
+				</div>
 			</div>
-			<hr>
-		</div>
-		</div>
-
-			<div class="row" ng-if="$odd">
-				<div class="col-xs-offset-6 col-xs-6">
-					<div class="row">
-						<div class="col-xs-1">
-							<img src="images/bg.jpg" class="media-object" style="width: 40px;">
-						</div>
-						<div class="col-xs-7">
-							<h4 class="media-heading">{{onemessage[2]}}</h4>
-							<p>{{onemessage[0]}}</p>
-						</div>
-					
-				
-
-			</div>
-			<hr>
-		</div>
-		</div>
-		</div>
 		<!--
 		<div class="row">
 			<div class="col-xs-offset-6 col-xs-6">
