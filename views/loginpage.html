@@ -1,0 +1,27 @@
+<div class="text-center text-secondary-background report" ng-bind="result" ng-if="result">
+	
+</div>
+<div class="row loginrow">
+	<div class="col-xs-4 loginbox">
+		<div class="header text-center">
+			<span class="fa-stack fa-4x" >
+				<i class="fa fa-circle fa-stack-2x text-tertiary"></i>
+				<i class="fa fa-comments-o fa-stack-1x fa-inverse" ></i>
+			</span>
+		</div>
+		<form ng-submit="logincheck()">
+			<div class="form-group">
+				<label for="email">Email</label>
+				<input type="email" name="email" placeholder="your email" class="form-control" ng-model="email">
+			</div>
+			<div class="form-group">
+				<label for="password">Password</label>
+				<input type="password" name="password" placeholder="your password" class="form-control" ng-model="pass">
+			</div>
+			<button type="submit" class="btn text-tertiary-background" >Login</button>
+		</form>
+		<br><br>
+		
+		<a href="#!/signup"><span class="text-secondary-background" style="padding: 10px;">Don't have a account yet, Please sign up</span></a>
+	</div>
+</div>

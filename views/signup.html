@@ -1,0 +1,41 @@
+
+
+<div class="text-center text-secondary-background report"  ng-if="signupform.signupemail.$invalid && signupform.signupemail.$dirty"><span>Invalid Email Address </span></div>
+<div ng-if="signupform.$submitted && processstatus">	
+	<span>Processing...</span>
+	<span >{{signupstatus}}</span>
+</div>
+<div class="row loginrow">
+	<div class="col-xs-4 loginbox">
+		<form ng-submit="signup()" name="signupform">
+			<div class="header text-center">
+				<span class="fa-stack fa-4x" >
+					<i class="fa fa-circle fa-stack-2x text-tertiary"></i>
+					<i class="fa fa-comments-o fa-stack-1x fa-inverse" ></i>
+				</span>
+			</div>
+			<div class="form-group">
+				<label for="fname">First Name </label>
+				<input type="text" ng-model="fname" placeholder="First name" maxlength="25" required autofocus="true" class="form-control" name=fname>
+			</div>
+			<div class="form-group">
+				<label for="lname">Last Name </label>
+				<input type="text" ng-model="lname" placeholder="Last name" maxlength="25" required autofocus="true" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="email">Email </label>
+				<input type="email" ng-model="signupemail" placeholder="Email" maxlength="30" required autofocus="true" class="form-control" name="signupemail">
+			</div>
+			<div class="form-group">
+				<label for="password">Password </label>
+				<input type="password" ng-model="signuppassword" placeholder="Password" maxlength="12" required autofocus="true" class="form-control">
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn text-tertiary-background" ng-disabled="signupform.$invalid">Signup</button>
+			</div>
+		</form>	<br>
+		<a href="#!/"><span class="text-secondary-background" style="padding: 10px;">Already have a account yet, Please login</span></a>
+
+	</div>
+
+</div>

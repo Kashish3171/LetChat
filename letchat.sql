@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 13, 2017 at 07:31 PM
+-- Generation Time: Jul 12, 2017 at 07:30 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -37,30 +37,11 @@ CREATE TABLE IF NOT EXISTS `message` (
 --
 
 INSERT INTO `message` (`id`, `text`, `date`) VALUES
-(3, 'hello this is a new message just to test things', 1499963329),
-(3, 'hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello', 1499963360),
-(3, 'ddd', 1499963674),
-(3, 'bfgvb', 1499963685),
-(3, 'ss', 1499963763),
-(3, 'de', 1499963784),
-(3, 'ede', 1499963825),
-(3, 'edee', 1499963830),
-(3, 'eewef', 1499963834),
-(3, 'efef', 1499963836),
-(3, 'dd', 1499964579),
-(3, 'sdf', 1499964613),
-(3, 'ss', 1499964743),
-(3, 'ss', 1499964831),
-(3, 's', 1499964859),
-(3, 's', 1499964910),
-(3, 'ss', 1499964940),
-(3, 'x', 1499964952),
-(3, 's', 1499964958),
-(3, 's', 1499964964),
-(3, 'ggugu', 1499966640),
-(5, 'hi', 1499966715),
-(3, 'ksa h bhai', 1499966726),
-(5, 'i m gud', 1499966733);
+(3, 'hi', 1499880508),
+(5, 'hi', 1499880565),
+(3, 'ksa h ldke', 1499880572),
+(5, 'jee rhe h bahi', 1499880579),
+(3, 'bdiya bhai', 1499880586);
 
 -- --------------------------------------------------------
 

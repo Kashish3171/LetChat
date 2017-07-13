@@ -1,0 +1,75 @@
+
+
+	<div class="row profilerow">
+		<div class=" col-xs-4 profile">
+		<div class="heading text-secondary-background text-center">
+			Main chat room
+			</div>
+		<div class="row profilerow1" id="chatbox">
+			<div class="col-xs-12">
+			
+			<div ng-repeat="onemessage in allmessages">
+
+				<div class="row">
+					<div class="col-xs-12 ">
+						<div class="row ">
+							<div class="col-xs-2">
+								<img src="images/bg.jpg" class="media-object" style="width: 40px;">
+
+							</div>
+							<p class="pull-right" style="margin-right: 5px;">{{onemessage[1]}} </p>
+							<div class="col-xs-8 ">
+
+								
+								<h4 class="media-heading">{{onemessage[2]}}</h4>
+								
+								<p>{{onemessage[0]}}</p>
+							</div>
+
+
+
+						</div>
+						<hr>
+					</div>
+				</div>
+	
+		<!--
+		<div class="row">
+			<div class="col-xs-offset-6 col-xs-6">
+				<div class="row">
+					<div class="col-xs-3">
+						<img src="images/bg.jpg" class="media-object" style="width: 60px;">
+					</div>
+					<div class="col-xs-7">
+						<h4 class="media-heading">Kahsish Goyal</h4>
+						<p>hi tehre, how have you been</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>	
+	-->
+</div>
+</div>
+</div>
+<div class="row chatrow">
+			<div class="col-xs-12">
+	
+				<form ng-submit="message()">
+					<div class="form-group">
+						<textarea class="form-control" placeholder="Your message" rows="4" ng-model="mess"></textarea>
+					</div>
+					<div class="form-group">
+						<button class="btn text-tertiary-background" type="submit">send</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		
+		
+	</div>
+</div></div>
+<div class="alert report text-center text-secondary-background" ng-if="serverstatus">
+			<span>{{serverstatus}}</span>
+			
+		</div>
